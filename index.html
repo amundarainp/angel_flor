@@ -582,7 +582,9 @@
         place-items: center;
         font-size: 26px;
         cursor: pointer;
-        transition: transform 0.2s ease, background 0.2s ease;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
         user-select: none;
         min-height: 140px;
         aspect-ratio: 4 / 3;
@@ -868,15 +870,21 @@
         .game-tile {
           min-height: 110px;
         }
+        .modal {
+          padding: 12px;
+        }
         .modal-card {
           grid-template-columns: 1fr;
-          padding: 16px;
+          padding: 18px;
+          width: min(96vw, 520px);
+          min-height: 72vh;
         }
         #giftModal .modal-card {
           grid-template-columns: 1fr;
+          min-height: 72vh;
         }
         .card-preview {
-          min-height: 320px;
+          min-height: 380px;
         }
         .music-panel {
           right: 14px;
@@ -964,8 +972,8 @@
       <section class="section" id="historia">
         <h2>Nuestra historia, con el corazón abierto</h2>
         <p>
-          Un recorrido por lo que somos, contado en capítulos que guardan lo
-          más lindo que construimos juntos.
+          Un recorrido por lo que somos, contado en capítulos que guardan lo más
+          lindo que construimos juntos.
         </p>
 
         <div class="timeline">
@@ -1016,7 +1024,7 @@
             "Flor, gracias por tu ternura, por tu paciencia y por la manera en
             la que me elegís. Este aniversario y San Valentín me recuerdan que
             lo nuestro es amor del lindo: sincero, profundo y lleno de futuro.
-            Te amo con calma, con alegría y con ganas de quedarme." 
+            Te amo con calma, con alegría y con ganas de quedarme."
           </p>
         </div>
       </section>
@@ -1053,8 +1061,8 @@
           <div class="card">
             <h4>Meta de bienestar</h4>
             <p>
-              Cuidarnos juntos: caminatas, charlas honestas y recordarnos que
-              la calma también es amor.
+              Cuidarnos juntos: caminatas, charlas honestas y recordarnos que la
+              calma también es amor.
             </p>
           </div>
         </div>
@@ -1089,9 +1097,7 @@
         <div class="audio-section">
           <div class="audio-card">
             <h4>Mensaje de voz</h4>
-            <p>
-              Guardá tu audio en assets/mensaje.mp3 para reproducirlo acá.
-            </p>
+            <p>Guardá tu audio en assets/mensaje.mp3 para reproducirlo acá.</p>
             <audio id="voiceAudio" controls preload="none" playsinline>
               <source src="assets/mensaje.mp3" type="audio/mpeg" />
               Tu navegador no soporta audio.
@@ -1209,9 +1215,7 @@
           <button class="btn btn-primary" id="downloadMatch">
             Descargar recuerdo
           </button>
-          <button class="btn btn-ghost" id="keepPlaying">
-            Seguir jugando
-          </button>
+          <button class="btn btn-ghost" id="keepPlaying">Seguir jugando</button>
         </div>
       </div>
     </div>
@@ -1472,9 +1476,7 @@
             gameMessage.textContent = "Casi, intentá otra vez.";
             setTimeout(() => {
               [first, second].forEach((idx) => {
-                const button = gameGrid.querySelector(
-                  `[data-index="${idx}"]`,
-                );
+                const button = gameGrid.querySelector(`[data-index="${idx}"]`);
                 button.classList.remove("is-revealed");
                 const img = button.querySelector("img");
                 if (img) {
@@ -1658,7 +1660,9 @@
       if (bgVolume) {
         bgVolume.addEventListener("input", () => {
           baseVolume = Number(bgVolume.value);
-          bgMusic.volume = voiceIsPlaying ? Math.max(0.02, baseVolume * 0.1) : baseVolume;
+          bgMusic.volume = voiceIsPlaying
+            ? Math.max(0.02, baseVolume * 0.1)
+            : baseVolume;
         });
       }
 

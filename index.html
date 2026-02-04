@@ -859,6 +859,43 @@
         .game-grid {
           grid-template-columns: repeat(3, minmax(60px, 1fr));
         }
+        .hero-photo img {
+          height: 180px;
+        }
+        .carousel-track img {
+          height: 240px;
+        }
+        .game-tile {
+          min-height: 110px;
+        }
+        .modal-card {
+          grid-template-columns: 1fr;
+          padding: 16px;
+        }
+        #giftModal .modal-card {
+          grid-template-columns: 1fr;
+        }
+        .card-preview {
+          min-height: 320px;
+        }
+        .music-panel {
+          right: 14px;
+          bottom: 84px;
+          min-width: 180px;
+        }
+        .music-toggle {
+          right: 14px;
+          bottom: 18px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .game-grid {
+          grid-template-columns: repeat(2, minmax(60px, 1fr));
+        }
+        .carousel-track img {
+          height: 210px;
+        }
       }
     </style>
   </head>
